@@ -44,6 +44,7 @@
     "ng2-restangular": "^0.1.23",
     "ngx-dropdown": "0.0.22",
     "ngx-modal": "^0.0.29",
+    "ngx-fabric8-wit": "^6.5.0",
     "patternfly": "^3.17.0",
     "pluralize": "^3.1.0",
     "reselect": "^2.5.4",

@@ -19,6 +19,15 @@
       </dd>
     </dl>
   </div>
+  <div class="col-xs-12">
+    <h3>Stacks</h3>
+    <dl class="dl-horizontal left">
+      <dd>
+        {{ build.stackAnalysisUuid }}
+        <stack-details [stack]="build.stackAnalysis"></stack-details>
+      </dd>
+    </dl>
+  </div>
 
   <div *ngIf="build?.spec?.containers">
     <h3>Containers</h3>

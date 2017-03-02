@@ -20,7 +20,7 @@ import { PagerService } from '../pager.service';
     RenderNextService,
     StackAnalysesService,
     StackAnalysesModel],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 
 export class StackDetailsComponent implements OnInit {
