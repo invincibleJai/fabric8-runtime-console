@@ -19,7 +19,9 @@ import { PagerService } from '../pager.service';
     PagerService,
     RenderNextService,
     StackAnalysesService,
-    StackAnalysesModel],
+    StackAnalysesModel,
+    FormBuilder,
+    ],
   encapsulation: ViewEncapsulation.None,
 })
 

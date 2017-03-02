@@ -1,4 +1,3 @@
-import { RECOMMENDER_API_URL } from './recommender-api';
 import { Injectable, Inject } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Logger } from 'ngx-login-client';
@@ -15,9 +14,8 @@ export class StackAnalysesService {
   constructor(
     private http: Http,
     private logger: Logger,
-    @Inject(RECOMMENDER_API_URL) apiUrl: string
   ) {
-    this.stackAnalysesUrl = apiUrl;
+    this.stackAnalysesUrl =  'http://api-bayesian.dev.rdu2c.fabric8.io/api/v1/'; //apiUrl;
   }
 
   getStackAnalyses(id: string): Observable<any> {
