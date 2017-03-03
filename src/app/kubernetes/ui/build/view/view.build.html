@@ -29,6 +29,18 @@
     </dl>
   </div>
 
+  <div class="col-xs-12">
+    <h3>Stack information</h3>
+
+    <dl class="dl-horizontal left">
+      <dt>Code bases:</dt>
+      <dd title="selector" *ngFor='let entry of codebases'>
+        <!-- stack-details [stack]="entry"></stack-details-->
+        {{entry.name}} : {{entry.uuid}}
+      </dd>
+    </dl>
+  </div>
+
   <div *ngIf="build?.spec?.containers">
     <h3>Containers</h3>
 
