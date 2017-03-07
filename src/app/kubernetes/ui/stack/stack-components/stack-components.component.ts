@@ -133,6 +133,7 @@ export class StackComponents implements OnChanges {
                 }
             ];
 
+            this.dependenciesList = [];
             for (let i: number = 0; i < length; ++ i) {
                 dependency = {};
                 eachOne = this.dependencies[i];
