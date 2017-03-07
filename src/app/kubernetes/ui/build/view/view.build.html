@@ -23,8 +23,8 @@
     <h3>Stacks</h3>
     <dl class="dl-horizontal left">
       <dd>
-        {{ build.stackAnalysisUuid }}
-        <stack-details [stack]="build.stackAnalysis"></stack-details>
+        {{ codebases[0].uuid }}
+        <stack-details [stack]="codebases[0].uuid "></stack-details>
       </dd>
     </dl>
   </div>

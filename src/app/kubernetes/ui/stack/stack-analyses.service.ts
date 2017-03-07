@@ -1,3 +1,4 @@
+import { RECOMMENDER_API_URL } from './recommender-api';
 import { Injectable, Inject } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Logger } from 'ngx-login-client';

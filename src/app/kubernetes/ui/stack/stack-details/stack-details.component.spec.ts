@@ -2,16 +2,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormBuilder, NgForm } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
 
 import { ModalModule } from 'ngx-modal';
 import { AuthenticationService } from 'ngx-login-client';
-import { ContainerTogglerModule } from 'ngx-widgets';
 
 import { Stack } from '../../../models/stack';
-import { StackRecommendationModule } from '../stack-recommendation/stack-recommendation.module';
 import { StackDetailsComponent } from './stack-details.component';
 import { RecommenderModule } from '../recommender/recommender.module';
 import { OverviewModule } from '../overview/overview.module';
@@ -20,10 +16,12 @@ import { StackComponentsModule } from '../stack-components/stack-components.modu
 import { recommenderApiUrlProvider } from './../../../shared/recommender-api.provider';
 import { ApiLocatorService } from './../../../shared/api-locator.service';
 import { witApiUrlProvider } from './../../../shared/wit-api.provider';
+import { GlobalConstants } from '../constants/constants.service';
 
 describe('StackDetailsComponent', () => {
   let component: StackDetailsComponent;
   let fixture: ComponentFixture<StackDetailsComponent>;
+  let debugElement: DebugElement;
 
   beforeEach(async(() => {
     let fakeAuthService: any = {
@@ -35,25 +33,23 @@ describe('StackDetailsComponent', () => {
       }
     };
     TestBed.configureTestingModule({
-      imports: [ContainerTogglerModule,
+      imports: [
         ModalModule,
-        StackRecommendationModule,
         RecommenderModule,
         OverviewModule,
         StackComponentsModule,
-        HttpModule,
-        ReactiveFormsModule
+        HttpModule
       ],
-      declarations: [StackDetailsComponent, NgForm],
+      declarations: [StackDetailsComponent],
       providers: [
-        FormBuilder,
         {
           provide: AuthenticationService,
           useValue: fakeAuthService
         },
         witApiUrlProvider,
         recommenderApiUrlProvider,
-        ApiLocatorService
+        ApiLocatorService,
+        GlobalConstants
       ]
     })
       .compileComponents();
@@ -68,4 +64,25 @@ describe('StackDetailsComponent', () => {
     fixture.detectChanges();
     expect(component).toBeTruthy();
   });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(StackDetailsComponent);
+    component = fixture.componentInstance;
+    debugElement = fixture.debugElement;
+    let stack: Stack = new Stack();
+    stack.uuid = '2ec2749ef0711bad2112ef45c2a5ee47bd32a6e4';
+    component.stack = stack;
+    fixture.detectChanges();
+  });
+
+  it('On click should open the modal', async(() => {
+    let stackComponent: any = fixture.componentInstance;
+    spyOn(stackComponent, 'showStackModal');
+    let button: any = debugElement.nativeElement.querySelector('.stack-reports-btn');
+    button.click();
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(stackComponent.showStackModal).toHaveBeenCalled();
+    });
+  }));
 });

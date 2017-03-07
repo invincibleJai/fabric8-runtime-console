@@ -1,8 +1,7 @@
 import {
     Component,
     Input,
-    OnChanges,
-    OnInit
+    OnChanges
 } from '@angular/core';
 
 @Component({
@@ -10,7 +9,42 @@ import {
     templateUrl: './stack-components.html',
     styleUrls: ['./stack-components.scss']
 })
-export class StackComponents implements OnChanges, OnInit {
+
+/**
+ * StackComponents
+ * implements OnChanges
+ * 
+ * Selector: 
+ * 'f8-stack-components'
+ * 
+ * Template:
+ * stack-components.html
+ * 
+ * Style:
+ * stack-components.scss
+ * 
+ * Functionality:
+ * Handles the display of dependant packages/units for the given package information.
+ * 
+ * Parent Component: 
+ * StackDetailsComponent
+ * 
+ * Pipes:
+ * table-orderby.pipe.ts
+ * table-filter.pipe.ts
+ * 
+ * Features:
+ * 1. Column Sorting
+ * 2. Table Filtering
+ * 
+ * It receives the input as an Array from the parent Component
+ * 
+ * The view changes based on those values.
+ * 
+ * Dynamically updates the table entries on filtering or on sorting.
+ * 
+ */
+export class StackComponents implements OnChanges {
 
     @Input() dependencies;
     private dependenciesList: Array<any> = [];
@@ -67,12 +101,6 @@ export class StackComponents implements OnChanges, OnInit {
         }
     }
 
-    ngOnInit() {
-        if (this.dependencies) {
-            this.handleDependencies(this.dependencies);
-        }
-    }
-
     private handleDependencies(dependencies: Array<any>): void {
         if (this.dependencies) {
             let length: number = this.dependencies.length;
@@ -121,12 +149,20 @@ export class StackComponents implements OnChanges, OnInit {
             }
         }
     }
-
+    /**
+     * handleKeyUpEvent - takes an event and returns nothing
+     * 
+     * Gets triggered everytime a value is typed in the filter box
+     * Sets the received value to the fieldValue
+     */
     private handleKeyUpEvent(event: Event): void {
         let target: any = event.target;
         this.fieldValue = target.value;
     }
 
+    /**
+     * Handles the click after changing the filters.
+     */
     private handleDropDownClick(element: Element): void {
         if (element.classList.contains('open')) {
             element.classList.remove('open');
@@ -147,6 +183,11 @@ export class StackComponents implements OnChanges, OnInit {
         event.preventDefault();
     }
 
+    /**
+     * Handles the column header click.
+     * This changes the tables entries either to ascending order or 
+     * desending order in context to the field
+     */
     private handleTableOrderClick(header: any): void {
         if (header.isSortable) {
             this.orderByName = header.identifier;
