@@ -31,13 +31,21 @@
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-2.4.1.tgz#62b4fbfc53c934bd5def78db594cbf245b3f446a"
 
-"@angular/core@^2.0.0", "@angular/core@^2.3.1", "@angular/core@^2.4.1":
+"@angular/core@2.4.9", "@angular/core@^2.3.1":
+  version "2.4.9"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-2.4.9.tgz#85dca2afa4021be91512c97597702ac8d73092e6"
+
+"@angular/core@^2.0.0", "@angular/core@^2.4.1":
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-2.4.1.tgz#3a6d2dc7fd86fdebe4febae7eb28abad7d04c76a"
 
 "@angular/forms@^2.4.1":
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-2.4.1.tgz#440ff9b864b3b79c55423c9ce5863030a25767ce"
+
+"@angular/http@2.4.9":
+  version "2.4.9"
+  resolved "https://registry.yarnpkg.com/@angular/http/-/http-2.4.9.tgz#a7de980d564ac25a497c5e822d2b941c1f143d48"
 
 "@angular/http@^2.0.0", "@angular/http@^2.4.1":
   version "2.4.1"
@@ -93,6 +101,16 @@
     loader-utils "^0.2.16"
     magic-string "^0.16.0"
     source-map "^0.5.6"
+
+"@types/c3@^0.4.40":
+  version "0.4.40"
+  resolved "https://registry.yarnpkg.com/@types/c3/-/c3-0.4.40.tgz#4416bcd77fc796f75bf18188408aee670607bbed"
+  dependencies:
+    "@types/d3" "^3"
+
+"@types/d3@^3":
+  version "3.5.38"
+  resolved "https://registry.yarnpkg.com/@types/d3/-/d3-3.5.38.tgz#76f8f2e9159ae562965b2fa0e6fbee1aa643a1bc"
 
 "@types/jasmine@^2.5.36", "@types/jasmine@^2.5.38":
   version "2.5.38"
@@ -905,7 +923,7 @@ bytes@2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-2.4.0.tgz#7d97196f9d5baf7f6935e25985549edd2a6c2339"
 
-c3@~0.4.11:
+c3@^0.4.11, c3@~0.4.11:
   version "0.4.11"
   resolved "https://registry.yarnpkg.com/c3/-/c3-0.4.11.tgz#3f2b6c7bd33577a3473dd61176735565b4d0f3ce"
   dependencies:
@@ -3751,11 +3769,15 @@ lodash.words@^3.0.0:
   dependencies:
     lodash._root "^3.0.0"
 
+lodash@4.17.4, lodash@^4.11.1, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.16.4, lodash@^4.3.0, lodash@^4.5.0:
+  version "4.17.4"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
+
 lodash@^3.10.0, lodash@^3.8.0:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.0.0, lodash@^4.11.1, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.16.4, lodash@^4.17.2, lodash@^4.3.0, lodash@^4.5.0:
+lodash@^4.0.0, lodash@^4.17.2:
   version "4.17.2"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.2.tgz#34a3055babe04ce42467b607d700072c7ff6bf42"
 
@@ -4017,6 +4039,10 @@ mktemp@~0.3.4:
   version "0.3.5"
   resolved "https://registry.yarnpkg.com/mktemp/-/mktemp-0.3.5.tgz#a1504c706d0d2b198c6a0eb645f7fdaf8181f7de"
 
+moment@2.15.1:
+  version "2.15.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.15.1.tgz#e979c2a29e22888e60f396f2220a6118f85cd94c"
+
 moment@^2.16.0:
   version "2.17.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.17.1.tgz#fed9506063f36b10f066c8b59a144d7faebe1d82"
@@ -4073,6 +4099,16 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
+ng2-bootstrap@1.1.16:
+  version "1.1.16"
+  resolved "https://registry.yarnpkg.com/ng2-bootstrap/-/ng2-bootstrap-1.1.16.tgz#0c5cd83a1f89f8d215c43a99e7b9dedab577ac5b"
+  dependencies:
+    moment "2.15.1"
+
+ng2-mobx@:
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/ng2-mobx/-/ng2-mobx-1.2.9.tgz#1efe0154c3acd9ea07eb29b332fbc5f412db0835"
+
 ng2-modal@0.0.25:
   version "0.0.25"
   resolved "https://registry.yarnpkg.com/ng2-modal/-/ng2-modal-0.0.25.tgz#61755f6da76017b1b0e42f38eeca3e92bd484206"
@@ -4090,6 +4126,27 @@ ng2-restangular@^0.1.23:
 ngx-dropdown@0.0.22:
   version "0.0.22"
   resolved "https://registry.yarnpkg.com/ngx-dropdown/-/ngx-dropdown-0.0.22.tgz#618871b016899c5c700bf7085c6cfe3ddbf71d25"
+
+ngx-fabric8-wit@^6.5.0:
+  version "6.6.2"
+  resolved "https://registry.yarnpkg.com/ngx-fabric8-wit/-/ngx-fabric8-wit-6.6.2.tgz#0f2f1dce369f474809fd75b390ebf0f495514a32"
+  dependencies:
+    "@angular/core" "2.4.9"
+    "@angular/http" "2.4.9"
+    lodash "4.17.4"
+    ngx-login-client "0.2.0"
+
+ngx-login-client@0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/ngx-login-client/-/ngx-login-client-0.2.0.tgz#2295036c810e1f5b81e1bc729a9f91aaa9bffe83"
+
+ngx-modal@^0.0.29:
+  version "0.0.29"
+  resolved "https://registry.yarnpkg.com/ngx-modal/-/ngx-modal-0.0.29.tgz#698aa252a79323a0ca47ad4ddee994d620ae6f15"
+
+ngx-widgets@0.2.8:
+  version "0.2.8"
+  resolved "https://registry.yarnpkg.com/ngx-widgets/-/ngx-widgets-0.2.8.tgz#2e72bdcb96dc3b668b0e5a7bb8e2abfeba6337ff"
 
 no-case@^2.2.0:
   version "2.3.0"
