@@ -670,11 +670,12 @@ export class DummyService implements OnInit {
       {
         name: "Builds",
         path: buildPath,
-      },
-      {
-        name: "Stacks",
-        path: stackPath,
-      },
+       }
+      //,
+      // {
+      //   name: "Stacks",
+      //   path: stackPath,
+      // },
     ]
     return {
       name: 'DevSpace',
