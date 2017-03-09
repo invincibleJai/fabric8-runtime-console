@@ -71,7 +71,6 @@ export class StackDetailsComponent implements OnInit {
   workItemData: any = {};
   multilpeActionData: any = {};
 
-  private stackAnalysisRawData: any = {};
   private recommendations: Array<any> = [];
   private dependencies: Array<any> = [];
   private stackOverviewData: any = {};
@@ -84,7 +83,7 @@ export class StackDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    //this.getStackAnalyses(this.stack.uuid);
+    this.getStackAnalyses(this.stack);
     this.setStackAnalysisChartData();
   }
 
@@ -165,31 +164,7 @@ export class StackDetailsComponent implements OnInit {
     this.dependencies = components;
   }
 
-  private setComponentsToGrid(stackData: any): void {
-    let components: Array<any> = stackData.components;
-    let length: number = components.length;
-    for (let i: number = 0; i < length; i++) {
-      let myObj: any = {};
-      myObj.ecosystem = components[i].ecosystem;
-      myObj.pkg = components[i].name;
-      myObj.version = components[i].version;
-      myObj.latestVersion = components[i].latest_version;
-      myObj.publicUsage = components[i].dependents_count;
-      myObj.relativePublicUsage = components[i].relative_usage;
-      myObj.popularity = '';
-      if (components[i].github_details.forks_count) {
-        myObj.popularity = components[i].github_details.forks_count;
-      }
-      if (components[i].github_details.stargazers_count) {
-        myObj.popularity += '/'
-          + components[i].github_details.stargazers_count;
-      }
 
-      myObj.redhatUsage = '';
-      myObj.licence = components[i].licenses[0];
-      this.componentsDataTable.push(myObj);
-    }
-  }
 
   /**
    * getStackAnalyses - takes an id (string) and returns nothing.
@@ -216,7 +191,7 @@ export class StackDetailsComponent implements OnInit {
               this.setDependencies(components);
             }
 
-            this.setComponentsToGrid(result);
+           // this.setComponentsToGrid(result);
           }
 
           // Check if the data has recommendation key
@@ -247,14 +222,13 @@ export class StackDetailsComponent implements OnInit {
   }
 
   private showStackModal(event): void {
-    this.getStackAnalyses('8950acb76bc84235873d73d149cb9f61');
     this.modalStackModule.open();
     // TODO : below hack needs to be removed
     // This hack was introduced as c3's chart was not properly rendered on load
     // but on triggering some random changes works fine
-    setTimeout(() => {
-      window.dispatchEvent(new Event('resize'));
-    }, 100);
+    // setTimeout(() => {
+    //   window.dispatchEvent(new Event('resize'));
+    // }, 100);
   }
 
 }
