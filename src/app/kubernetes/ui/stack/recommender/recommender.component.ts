@@ -72,12 +72,6 @@ export class RecommenderComponent implements OnChanges {
                 {
                     itemName: 'Create WorkItem',
                     identifier: 'CREATE_WORK_ITEM'
-                }, {
-                    itemName: 'Dismiss Recommendation',
-                    identifier: 'DISMISS'
-                }, {
-                    itemName: 'Restore Recommendation',
-                    identifier: 'RESTORE'
                 }
             ];
 
