@@ -9,6 +9,6 @@ import {Build} from "../../../model/build.model";
 export class BuildViewComponent {
 
   @Input() build: Build;
-  public codebases = [{name: 'Pllm', uuid: '8950acb76bc84235873d73d149cb9f61'},
-                     {name: 'Pllm2', uuid: '8950acb76bc84235873d73d149cb9f61'}];
+  public codebases = [{name: 'Pllm', uuid: 'ff59ea91cf264003bc6dc12621c91205'},
+                     {name: 'Pllm2', uuid: 'ff59ea91cf264003bc6dc12621c91205'}];
 }
